@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../styles/App.css";
 import Selection from "./Selection";
 import ColourSelector from "./ColourSelector";
@@ -31,6 +31,10 @@ const App = () => {
   const applyColor = (updateSelectionStyle) => {
     updateSelectionStyle(nextBackground);
   };
+
+  useEffect(()=>{
+    console.log(nextBackground)
+  },[nextBackground])
 
   return (
     <div id="master">
